@@ -1,0 +1,47 @@
+
+1) 'What data structure did you use for part one? Why did you select these data structures?'
+
+I decided to sort restaurant types using a hashmap. I used the restaurant type as the value, and the type's first letter as the corresponding key. The reason I chose this data structure was because I wanted to index elements according to their first letter. That way, when a user entered the start of a word, the code would be able to quickly retrieve all of the restaurants with the same starting letters.
+
+2) 'What is the runtime (in asymptotic notation) of searching for a food type?'
+
+Runtime is O(N)
+Justification:
+
+a) Given a user input, the first letter of that input is hashed to find the corresponding index of that letter within the map. Runtime: O(1).
+
+b) At that index is a list of restaurant types with the same first letter. If the user's input was longer than one letter, The code must iterate through the list to see if the second letter of the user's input matches the second letter of any of the restaurant types. RuntimeO(N)
+
+Therefore total run time is O(N)
+
+I don't believe that there is a more efficiant worst case run time, but I do think that a Trie would perform better on average.
+
+Consider the following example: We want to find a word 'potato' in a trie. In the worst case scenario, there exists an almost identical word, say, 'potatoe.' Because of this, the code would have to iterate through all seven letters in order to find the word that was specified by the user.
+
+On average, however, the trie would be able to find words more quickly because the odds of two given words sharing the same first letters diminishes exponentially as the length of the word increases.
+
+3) 'Which data structures did you use for part 2? Why did you select these data structures?''
+
+In this part, I also sorted restaurant data into a hashmap, this time with the restaurant's data as the value and the user's choice of cuisine as the key.
+
+I chose this data structure because I wanted to quickly access all of the restaurants of a particular cuisine. In fact, I noticed that my needs in this part were almost identical to my needs in part one:
+
+I had a large collection of objects I wanted grouped up according to some 'key' piece of information. In part one, I wanted cuisine types grouped up by their first letter. In part 2, I wanted restaurant types grouped up by their cuisine.
+
+4) 'What is the runtime of retrieving the restaurant data? Do you think there's a more efficiant runtime?'
+
+Runtime is O(N):
+Justification:
+
+I wanted to print all restaurants of a specific cuisine type. Given N restaurants, the worst case scenario would be if all N restaurants had the same cuisine tpye. Therefore I have reason to believe that the hashmap is the most efficiant data structure for this job.
+
+5)  'Outside of this project, what are other innovative ways you can use data structures?'
+
++ Lists of golf players and their scores could be sorted in increasing order using a heap.
+
++ A weighted graph could be used to simulate a simple circuit board with resistors.
+
++ A tree could be used as the data structure behind a 'what number am I thinking of' game?
+
+
+
